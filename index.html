@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Test DB!</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- LINK TO FIREBASE GOES HERE -->
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+   <script src="assets/javascript/main.js"></script>
+
+</head>
+
+
+<div class="container">
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <h1 class="text-center">Enter Train Info</h1>
+    </div>
+<div class="row">
+ <!-- Wells for displaying all trains -->
+ <div class="col-lg-12">
+      <div class="card">
+          <div class="card-header">
+            All Trains
+          </div>
+      <div class="card-body">
+      <div id="full-train-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div> -->
+    <div class="row">
+
+      <!-- Train Details-->
+      <!-- <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            New Train Info
+          </div> -->
+     
+      
+          <div class="train-details col-lg-12">
+            
+
+            <!-- Enter the detail about the trains-->
+            <form role="form">
+              <div class="form-group row">
+                <label for="trainName-input">Train Name:</label>
+                <input class="form-control" id="name-input" type="text">
+              </div>
+              <div class="form-group row">
+                <label for="startTime-input">First Train Time:</label>
+                <input class="form-control" id="startTime-input" type="text">
+              </div>
+              <div class="form-group row">
+                <label for="destination-input">Destination:</label>
+                <input class="form-control" id="destination-input" type="text">
+              </div>
+              <div class="form-group row">
+                <label for="frequency-input">Frequency (in minutes):</label>
+                <textarea class="form-control" id="frequency-input" rows="5"></textarea>
+              </div>
+              <button class="btn btn-default" id="add-train" type="submit">Submit</button>
+            </form>
+
+          <!-- </div> -->
+        </div>
+</div>
+
+
+
+
+
+<!--      
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDkdGvislvyHwiw130aKfNYIDfFHYqy03k",
+      authDomain: "test-db-1bb88.firebaseapp.com",
+      databaseURL: "https://test-db-1bb88.firebaseio.com",
+      projectId: "test-db-1bb88",
+      storageBucket: "test-db-1bb88.appspot.com",
+      messagingSenderId: "17401072436"
+    };
+
+  </script> -->
+
+  
+
+ 
