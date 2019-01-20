@@ -15,8 +15,8 @@ $(document).ready(function () {
   
 
 
-var database = firebase.database();
- console.log(database);
+var dataRef = firebase.database();
+ console.log(dataRef);
 
 
     // Initial Values
@@ -29,6 +29,7 @@ var database = firebase.database();
       // Code in the logic for storing and retrieving the most recent user.
       // Don't forget to provide initial data to your Firebase database.
       // $('#add-train').off();
+      
       $('#add-train').on("click", function(event) {
         event.preventDefault();
 
@@ -42,17 +43,28 @@ var database = firebase.database();
         destination: destination,
         startTime: startTime,
         frequency: frequency, });
-      });
+    
 
+     
       // Code for the push
-      database.ref().push({
+      dataRef.ref().push({
 
-        trainName:  trainName,
-        destination: tdestination,
-        startTime:  startTime,
-        frequency:  frequency,
-        // dateAdded: firebase.database.ServerValue.TIMESTAMP
+        trainName: trainName,
+        destination: destination,
+        startTime: startTime,
+        frequency: frequency,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
       });
+    });
+
+      dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
+        // Change the HTML to reflect
+        $("#trainName-display").append('<p>' + snapshot.val().trainName);
+        $("#destination-display").append('<p>' + snapshot.val().destination);
+        $("#frequency-display").append('<p>' + snapshot.val().frequency);
+     
+      });
+
     });
 
 
