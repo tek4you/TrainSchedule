@@ -1,19 +1,22 @@
 $(document).ready(function () {
 
 
-  var config = {
-    apiKey: "AIzaSyDkdGvislvyHwiw130aKfNYIDfFHYqy03k",
-    authDomain: "test-db-1bb88.firebaseapp.com",
-    databaseURL: "https://test-db-1bb88.firebaseio.com",
-    projectId: "test-db-1bb88",
-    storageBucket: "test-db-1bb88.appspot.com",
-    messagingSenderId: "17401072436"
-  };
+  
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBOuyBGDRSuL4bqKxQkvA19fNk9k1R14o8",
+      authDomain: "trainschedule-5c2b7.firebaseapp.com",
+      databaseURL: "https://trainschedule-5c2b7.firebaseio.com",
+      projectId: "trainschedule-5c2b7",
+      storageBucket: "trainschedule-5c2b7.appspot.com",
+      messagingSenderId: "159091987138"
+    };
+    firebase.initializeApp(config);
+  
 
-firebase.initializeApp(config);
 
-var dataRef = firebase.database();
- console.log(dataRef);
+var database = firebase.database();
+ console.log(database);
 
 
     // Initial Values
@@ -42,13 +45,13 @@ var dataRef = firebase.database();
       });
 
       // Code for the push
-      dataRef.ref().push({
+      database.ref().push({
 
-        trainName: trainName,
-        destination: destination,
-        startTime: startTime,
-        frequency: frequency,
-        dateAdded: firebase.database.ServerValue.TIMESTAMP
+        trainName:  trainName,
+        destination: tdestination,
+        startTime:  startTime,
+        frequency:  frequency,
+        // dateAdded: firebase.database.ServerValue.TIMESTAMP
       });
     });
 
